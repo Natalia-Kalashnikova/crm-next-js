@@ -1,6 +1,9 @@
+import { headers } from "next/headers";
 import StatusLabel, { Status } from "./components/status-label";
 
 export default function Home() {
+  const serverHeaders = headers();
+  // console.log(headers());
   return (
     <main>
       <h1>Home page</h1>
