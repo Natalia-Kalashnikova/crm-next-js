@@ -15,7 +15,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Header from "../../../components/header";
+import Header from "@/app/components/header";
 
 export interface PageProps {
   params: Promise<{ id: string }>;
