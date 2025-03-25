@@ -16,7 +16,7 @@ export default async function Page({}: PageProps) {
 });
 
   return (
-    <DashboardCard label={<>Sales details<MagicButton/></>}>
+    <DashboardCard label={<>Sales details</>}>
       <SummaryTable
         headers={
           <>
@@ -36,3 +36,4 @@ export default async function Page({}: PageProps) {
     </DashboardCard>
   );
 }
+
