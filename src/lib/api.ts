@@ -44,7 +44,7 @@ export interface SummaryStats {
    avatar?: string;
  }
  
- export interface Promotion {
+ export interface PromotionType {
    id: string;
    title: string;
    description: string;
@@ -99,7 +99,7 @@ export const getPromotions = async (
   params: Record<string, string> = {},
   init?: RequestInit,
 ) => {
-  return sendRequest<Promotion[]>(
+  return sendRequest<PromotionType[]>(
     `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
     init,
   );
