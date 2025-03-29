@@ -5,17 +5,20 @@ import { CompanyStatus } from "@/lib/api";
 
 export interface StatusLabelProps {
   status: CompanyStatus;
-  disabled?: boolean  
+  disabled?: boolean;
+  styled?: boolean;
 }
 
 const labelByStatus = {
-  [CompanyStatus.Active]: "Active",
-  [CompanyStatus.NotActive]: "Not Active",
-  [CompanyStatus.Pending]: "Pending",
-  [CompanyStatus.Suspended]: "Suspended",
+  [CompanyStatus.Active]: 'Active',
+  [CompanyStatus.NotActive]: 'Not Active',
+  [CompanyStatus.Pending]: 'Pending',
+  [CompanyStatus.Suspended]: 'Suspended',
 };
 
-export default function StatusLabel({status, disabled}: StatusLabelProps) {
+export default function StatusLabel({ status, disabled, styled = true }: StatusLabelProps) {
+  const label = labelByStatus[status];
+   if (!styled) return <>{label}</>;
   return (
     <div
       className={clsx(
@@ -27,7 +30,7 @@ export default function StatusLabel({status, disabled}: StatusLabelProps) {
         { "opacity-75 cursor-not-allowed": disabled }
       )}>
       <div className="w-1 h-1 mr-2 rounded-full bg-current" />
-      {labelByStatus[status]}
+      {label}
     </div>
   );
 }

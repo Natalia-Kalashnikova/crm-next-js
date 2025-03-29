@@ -6,9 +6,10 @@ import { Field } from "formik";
 export interface InputFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  as?: 'select' | 'textarea';
 }
 
-export default function InputField({ label, id, ...props }: InputFieldProps) {
+export default function InputField({ label, id, ...rest }: InputFieldProps) {
   return (
     <div className="flex flex-col">
       {label && (
@@ -18,7 +19,7 @@ export default function InputField({ label, id, ...props }: InputFieldProps) {
       )}
       <Field
         id={id}
-        {...props}
+        {...rest}
         className="p-3 h-11 text-sm rounded border border-gray-300 shadow"
       />
     </div>

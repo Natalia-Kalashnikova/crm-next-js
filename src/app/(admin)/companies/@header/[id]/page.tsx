@@ -20,3 +20,4 @@ export default async function Page({ params }: PageProps) {
 
    return <Header>{company?.title}</Header>;
  }
+

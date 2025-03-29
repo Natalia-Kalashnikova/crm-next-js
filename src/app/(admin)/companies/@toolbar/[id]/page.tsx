@@ -14,3 +14,4 @@ export default function Page({params}: PageProps) {
         </Toolbar>
     );
 }
+
